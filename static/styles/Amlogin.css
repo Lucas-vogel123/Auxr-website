@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.navbar {
+    background-color: #A59ECB;
+}
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: white;
+}
+.sticky-top {
+    top: 0;
+    z-index: 1020;
+}
+.home-button{
+    font-size: x-large;
+  }
+.page-title {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.submit-btn {
+    background-color: #A59ECB;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0 auto;
+    display: block;
+}
+.footer {
+    background-color: #A59ECB;
+    padding: 20px;
+    text-align: center;
+}
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}

@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.navbar {
+    background-color: #A59ECB;
+}
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: white;
+}
+.home-button{
+    font-size: x-large;
+}
+.sticky-top {
+    top: 0;
+    z-index: 1020;
+}
+.page-title {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.team-member {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.team-member img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+.team-member .name {
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+}
+.footer {
+    background-color: #A59ECB;
+    padding: 20px;
+    text-align: center;
+}

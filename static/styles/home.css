@@ -1,108 +1,48 @@
 body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    margin: 0;
-  }
-  
-  /* Set the background color of the page */
-  body {
-    background-color: #ffffff;
-  }
-  
-  /* Style the navigation bar */
-  .navbar {
-    background-color: #a59ecb;
-    padding: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-  }
-  
-  /* Style the Auxr logo */
-  .navbar-brand {
-    color: #ffffff;
-    font-weight: bold;
-  }
-  
-  /* Style the navigation links */
-  .nav-link {
-    color: #ffffff;
-  }
-  
-  /* Style the first section */
-  .section-one {
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 4rem);
-  }
-  
-  /* Style the Auxr app icon */
-  .section-one img {
-    max-width: 50%;
-    height: auto;
-  }
-  
-  /* Style the header and subheader in the first section */
-  .section-one h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .section-one h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  /* Style the second section */
-  .section-two {
-    background-color: #222222;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 4rem);
-  }
-  
-  /* Style the header and subheader in the second section */
-  .section-two h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 1rem;
-  }
-  
-  .section-two p {
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-bottom: 1rem;
-  }
-  
-  /* Style the third section */
-  .section-three {
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 4rem);
-  }
-  
-  /* Style the header and subheader in the third section */
-  .section-three h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .section-three p {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  /* Style the iPhone image holder */
-  .iphone-img {
-    max-width: 50%;
-    height: auto;
-    margin-right: 2rem;
-  }
+  font-family: Arial, sans-serif;
+}
+.navbar {
+  background-color: #A59ECB;
+}
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: white;
+}
+.home-button{
+  font-size: x-large;
+}
+.section-1 {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section-1 .headline {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.section-1 .subheadline {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.section-1 .feature {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.section-2 {
+  background-color: #222222;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10%;
+}
+.section-2 .benefit {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
