@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    background-color: #A59ECB;
+}
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: white;
+}
+.sticky-top {
+    top: 0;
+    z-index: 1020;
+}
+.header {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.images-section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.images-section img {
+    width: 30%;
+    height: auto;
+}
+.image-container {
+    text-align: center;
+}
+.date {
+    margin-bottom: 20px;
+}
+.track-progress {
+    background-color: #222222;
+    color: white;
+    padding: 20px 0;
+    min-height: calc(100vh - 150px - 58px);
+}
+.track-progress h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.progress {
+    background-color: white;
+    height: 20px;
+    border-radius: 10px;
+    width: 50%;
+    margin: 0 auto 10px;
+}
+.progress .progress-bar {
+    background-color: #A59ECB;
+    height: 100%;
+    border-radius: 10px;
+}
+.percentage {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.next-reward {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.next-reward img {
+    width: 20%;
+    height: auto;
+}
+.next-reward h3 {
+    font-size: 24px;
+    margin-bottom: 0;
+}
+.footer {
+    background-color: #A59ECB;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+.footer-links {
+    margin-bottom: 5px;
+}
