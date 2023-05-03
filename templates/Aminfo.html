@@ -5,23 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Auxr Ambassador Program</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel = "stylesheet" href = "../static/styles/Aminfo.css">
+    <link rel = "stylesheet" href = "../static/styles/amInfo.css">
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="home.html">Auxr</a>
-            <div class="collapse navbar-collapse">
+            <a class="navbar-brand" href="home.info">Auxr</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="team.html">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Aminfo.html">Ambassador Program</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="NewsletterSignUp.html">Newsletter SignUp</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Pages
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="team.html">About the Team</a></li>
+                            <li><a class="dropdown-item" href="Amlogin.html">Auxr Ambassador Login</a></li>
+                            <li><a class="dropdown-item" href="NewsletterSignUp.html">Sign up for the Newsletter</a></li>
+                            <li><a class="dropdown-item" href="Amapply.html">Apply to become an Auxr ambassador</a></li>
+                            <li><a class="dropdown-item" href="Aminfo.html">About Auxr Ambassadors</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
