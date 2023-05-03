@@ -1,52 +1,67 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Auxr</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel = "stylesheet" href = "../static/styles/home.css">
-</head>
-<body>
-
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="home.html">Auxr</a>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="team.html">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Aminfo.html">Ambassador Program</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="NewsletterSignUp.html">Newsletter SignUp</a>
-                    </li>
-                </ul>
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Auxr</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./static/styles/home.css" rel="stylesheet">
+	</head>
+	<body id="body">
+    <span id="s_1" class="spacer"></span>
+    <div id="home_section" class="container">
+      <div id="inner_home_container">
+        <div id="p_1" class="phone"></div>
+        <div id="header_section">
+          <div id="header">
+            <div id="inner_header_container">
+              <img id="logo_placeholder" src="./static/images/icon.png"/>
+              <span id="Auxr_text">Auxr</span>
             </div>
+            <span id="slogan">Queue Together</span>
+          </div>
+          <img id="download" src="./images/download.svg" />
         </div>
-    </nav>
+      </div>
+    </div>
+    <span id="s_1" class="spacer"></span>
+    <span id="s_2" class="spacer"></span>
+    <div id="create_section" class="container">
+      <div id="create_displays">
+        <div id="p_2" class="phone"></div>
+        <div id="p_3" class="phone"></div>
+      </div>
+      <div id="create_description">
+        <span class="description_title">Create Real-time Playlists</span>
+        <span class="description_text">Hosts can create and share playlists to queue songs with multiple listeners</span>
+        <span class="description_text">Playlists are shared with a unique passcode</span>
+        <span class="description_text">Audio is played from the host phone or connected sound device</span>
+      </div>
+    </div>
+    <span id="s_2" class="spacer"></span>
+    <span id="s_3" class="spacer"></span>
+    <div id="share_section" class="container">
+      <div id="share_displays">
+        <div id="p_4" class="phone"></div>
+        <div id="p_5" class="phone"></div>
+      </div>
+      <div id="share_description">
+        <span class="description_title">Share the Music Experience</span>
+        <span class="description_text">Up to 10 listeners can join</span>
+        <span class="description_text">No account creation is needed</span>
 
-    <section class="section-1">
-        <h1 class="headline">Auxr</h1>
-        <h2 class="subheadline">Queue Together</h2>
-        <div class="container">
-            <p class="feature">Create Real Time Playlists</p>
-            <p class="feature">Hosts can share playlists to queue up songs with multiple listeners</p>
-            <p class="feature">Audio is played from the host's phone or connected sound device</p>
-        </div>
-    </section>
-
-    <section class="section-2">
-        <div>
-            <p class="benefit">Share the music experience</p>
-            <p class="benefit">Up to 10 listeners can join</p>
-            <p class="benefit">No account creation is needed</p>
-        </div>
-    </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+      </div>
+    </div>
+    <span id="s_3" class="spacer"></span>
+    <div id="footer" class="container">
+      <label id="copyright">&#169; 2023 Auxr, LLC. All Rights Reserved.</label>
+      <button id="privacy_policy_button" onclick="openNewTab()">Privacy Policy</button>
+      <script>
+      function openNewTab() { window.open("./privacypolicy.html", "_blank"); }
+      </script>
+      <a id='contact_email' href='mailto:contact@auxr.app' target='_blank'>contact@auxr.app</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+  </body>
 </html>
