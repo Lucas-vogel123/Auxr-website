@@ -31,4 +31,5 @@ def team():
     return render_template("team.html")
 
 if __name__ == "__main__":
+    #init_db()
     app.run(debug = True)
