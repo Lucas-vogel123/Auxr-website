@@ -34,7 +34,7 @@ body {
     font-size: 36px;
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 .description {
     font-size: 18px;
@@ -51,6 +51,9 @@ body {
 .home-button{
     font-size: x-large;
   }
+.spacing {
+    padding-bottom: 20px;
+}
 .submit-btn {
     background-color: #A59ECB;
     color: white;

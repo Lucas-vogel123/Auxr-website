@@ -58,11 +58,23 @@ body {
     margin-bottom: 20px;
 }
 .centered-box {
-    width: 50%;
+    width: 800 px;
     margin: 0 auto;
     display: block;
 }
-
+.submit-btn {
+    background-color: #A59ECB;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0 auto;
+    display: block;
+}
+.spacing {
+    margin-top: 50px;
+}
 .footer {
     background-color: #A59ECB;
     text-align: center;
