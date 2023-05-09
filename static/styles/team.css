@@ -14,7 +14,7 @@ body {
 }
 .navbar-nav {
     position: relative;
-    right: 100px;
+    right: 100px; 
 }
 .dropdown-menu {
     background-color: #A59ECB;

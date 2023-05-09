@@ -23,6 +23,29 @@ html{ height: 100%; }
   overflow-x: hidden;
   background-color: rgb(165, 158, 203);
 }
+.navbar {
+  background-color: white;
+
+}
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #A59ECB;
+}
+.navbar-nav {
+  position: relative;
+  right: 100px;
+}
+.dropdown-menu {
+  background-color: white;
+  
+}
+.dropdown-item {
+  color: #A59ECB;
+}
+.sticky-top {
+  top: 0;
+  z-index: 1020;
+}
 
 #s_1{ background-color: rgb(165, 158, 203); }
 #s_2{ background-color: rgb(34 , 34, 34); }
