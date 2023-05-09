@@ -14,6 +14,10 @@ def home():
 def ambassador_info():
     return render_template("Aminfo.html")
 
+@app.route("/privacy/policy")
+def ambassador_info():
+    return render_template("privacyPolicy.html")
+
 @app.route("/ambassador/login", methods = ["GET", "POST"])
 def ambassador_login():
     if request.method == "POST":

@@ -11,7 +11,7 @@
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="home.info">Auxr</a>
+            <a class="navbar-brand" href="/home">Auxr</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -66,29 +66,36 @@
 
         <div class="black-background">
             <h2>Short Answer Responses</h2>
-            <h4>Why do you want to be an ambassador?</h4>
-            <label for = "SA1" class="answer centered-box" placeholder="Answer here..."></label>
-            <input type="text" class="form-control" id = "SA1" name="SA1">
+            <div class="spacing">
+                <h4>Why do you want to be an ambassador?</h4>
+                <label for = "SA1" class="answer centered-box" placeholder="Answer here..."></label>
+                <input type="text" class="form-control" id = "SA1" name="SA1">
+            </div>
     
-            <h4>How do you see yourself contributing as an Auxr ambassador?</h4>
+            <div class="spacing">
+                <h4>How do you see yourself contributing as an Auxr ambassador?</h4>
                 <label for = "SA2" class="answer centered-box" placeholder="Answer here..."></label>
                 <input type="text" class="form-control" id = "SA2" name="SA2">
+            </div>
 
-            <h4>What marketing or promoting experience do you have?</h4>
+            <div class="spacing">
+                <h4>What marketing or promoting experience do you have?</h4>
                 <label for = "SA3" class="answer centered-box" placeholder="Answer here..."></label>
                 <input type="text" class="form-control" id = "SA3" name="SA3">
+            </div>
             <div class="container">
-                <div class="spacing">
-                    <div class="row col-md-6 form-group">
+                <div class="spacing center">
+                    <div class="row form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id = "password" name="password">
+                        <input type="password" class="form-control" id="password" name="password">
                     </div>
-                    <div class="row col-md-6 form-group">
+                    <div class="row form-group">
                         <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" class="form-control" id = "confirmPassword" name="confirmPassword">
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
                     </div>
                 </div>
             </div>
+            
             <button class="submit-btn">Submit</button>
         </div>
     </form> 
@@ -96,7 +103,7 @@
     <footer class="footer">
         <div class="footer-links">
             <p>&copy; 2023 Auxr. All rights reserved.</p>
-            <p>Privacy Policy</p>
+            <a href="/privacy/policy"><p>Privacy Policy</p></a>
             <p>contact@auxr.app</p>
         </div>
     </footer>
