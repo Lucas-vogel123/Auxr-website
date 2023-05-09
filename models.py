@@ -1,5 +1,6 @@
 from sqlalchemy import ForeignKey, Column, INTEGER, TEXT, DATETIME, BOOLEAN
 from sqlalchemy.orm import relationship
+from sqlalchemy import ForeignKey
 from database import Base
 
 class Ambassador(Base):
@@ -10,11 +11,13 @@ class Ambassador(Base):
     first_name = Column("fname", TEXT, nullable = False)
     last_name = Column("lname", TEXT, nullable = False)
     password = Column("password", TEXT, nullable = False)
-    application = relationship("Application", back_populates="ambassadors")
+    application = relationship("Application", back_populates="ambassador")
 
-    def __init__(self, email, password):
+    def __init__(self, email, first_name, last_name, password):
         self.email = email
         self.password = password
+        self.first_name = first_name
+        self.last_name = last_name
         
 class Application(Base):
     __tablename__ = "applications"
@@ -31,7 +34,7 @@ class Application(Base):
     SA_3 = Column("SA_3", TEXT, nullable = False)
     password = Column("password", TEXT, nullable = False)
     ambassador_id = Column("ambassador_id", INTEGER, ForeignKey(Ambassador.id))
-    ambassadors = relationship("Ambassador", back_populates = "application")
+    ambassador = relationship("Ambassador", back_populates = "application")
     
     def __init__(self, fname, lname, gender, email, school, programs, SA1, SA2, SA3, password):
         self.first_name = fname

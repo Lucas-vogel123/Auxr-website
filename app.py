@@ -25,13 +25,13 @@ def ambassador_login():
     if request.method == "POST":
         email = request.form["email"]
         password = request.form["password"]
-        ambassador = db_session().query(Ambassador).where(Ambassador.email == email and Ambassador.password == password)
+        ambassador = db_session().query(Ambassador).where((Ambassador.email == email) & (Ambassador.password == password)).first()
         if(ambassador == None):
-            print("ambassador does not exist")
-            #handle error here
+            flash("ambassador does not exist")
+            return redirect(url_for("ambassador_login"))
         else:
             print("Ambassador logged in")  
-            return render_template("home.html")
+            return redirect(url_for("home"))
     else:
         return render_template("Amlogin.html")
 
@@ -54,34 +54,34 @@ def ambassador_apply():
         sa3 = request.form["SA3"]
         password = request.form["password"]
         confirm_password = request.form["confirmPassword"]
-        # verify_password = db_session().query(Ambassador).where(Ambassador.password == password)
+        verify_password = db_session().query(Ambassador).where(Ambassador.email == email)
         if(password == confirm_password):
             verify = True
-            print("password is good")
-        # elif(verify_password != None):
-        #     #handle error
-        #     print("Password is taken")
-        #     pass
+            print("email is good")
+        elif(verify_password != None):
+            #handle error
+            flash("email is already registered")
         else:
             verify = False
             print("wrong password")
         if(verify):
             new_application = Application(fname, lname, gender, email, school, programs, sa1, sa2, sa3, password)
             #algorithm that sorts ambassador application into ambassadors
-            is_ambassador = db_session().query(Ambassador).where(Ambassador.first_name == fname and Ambassador.last_name == lname and Ambassador.email == email and Ambassador.school == school)
-            #if(is_ambassador == None):
-            new_ambassador = Ambassador(email, password)
-            Ambassador.application.append(new_application)
-            Application.ambassadors.append(new_ambassador)
-            db_session.add(new_ambassador)
-            print("ambassador made")
-            #else:
+            is_ambassador = db_session().query(Ambassador).where((Ambassador.first_name == fname) & (Ambassador.last_name == lname) & (Ambassador.email == email))
+            if(is_ambassador == None):
+                db_session.add(new_application)
+                db_session.commit()
+                new_ambassador = Ambassador(email, fname, lname, password)
+                new_ambassador.application = [new_application]
+                db_session.add(new_ambassador)
+                print("ambassador made")
+            else:
                 #handle error
-                #print("Ambassador already exists")
-            db_session.add(new_application)
+                flash("Ambassador already exists")
+                return redirect(url_for("ambassador_apply"))
             db_session.commit()
             print("application made")
-        return render_template("home.html")
+        return redirect(url_for("home"))
     
     else:
         return render_template("Amapply.html")
@@ -90,11 +90,16 @@ def ambassador_apply():
 def newsletter_signup():
     if request.method == "POST":
         email = request.form["email"]
-        new_newsletter = Newsletter(email)
-        db_session.add(new_newsletter)
-        db_session.commit()
-        print("newsletter made")
-        return render_template("home.html")
+        already_registered = db_session().query(Newsletter).where(email == Newsletter.email).all()
+        if(already_registered == None):
+            new_newsletter = Newsletter(email)
+            db_session.add(new_newsletter)
+            db_session.commit()
+            print("newsletter made")
+        else:
+            flash("email is already regsitered")
+            return redirect(url_for("newsletter_signup"))
+        return redirect(url_for("home"))
     else:
         return render_template("newsletterSignUp.html")
     

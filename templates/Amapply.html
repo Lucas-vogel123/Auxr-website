@@ -37,6 +37,13 @@
     <form method = "POST">
         <div class="container">
             <div class="row">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for msg in messages %}
+                            <p class = "text-danger">{{msg}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
                 <div class="col-md-6 form-group">
                     <label for="firstName">First Name</label>
                     <input type="text" class="form-control" id = "firstName" name="firstName">
@@ -69,19 +76,19 @@
             <div class="spacing">
                 <h4>Why do you want to be an ambassador?</h4>
                 <label for = "SA1" class="answer centered-box" placeholder="Answer here..."></label>
-                <input type="text" class="form-control" id = "SA1" name="SA1">
+                <textarea type="text" class="form-control" id = "SA1" name="SA1"></textarea>
             </div>
     
             <div class="spacing">
                 <h4>How do you see yourself contributing as an Auxr ambassador?</h4>
                 <label for = "SA2" class="answer centered-box" placeholder="Answer here..."></label>
-                <input type="text" class="form-control" id = "SA2" name="SA2">
+                <textarea type="text" class="form-control" id = "SA2" name="SA2"></textarea>
             </div>
 
             <div class="spacing">
                 <h4>What marketing or promoting experience do you have?</h4>
                 <label for = "SA3" class="answer centered-box" placeholder="Answer here..."></label>
-                <input type="text" class="form-control" id = "SA3" name="SA3">
+                <textarea type="text" class="form-control" id = "SA3" name="SA3"></textarea>
             </div>
             <div class="container">
                 <div class="spacing center">
@@ -95,7 +102,6 @@
                     </div>
                 </div>
             </div>
-            
             <button class="submit-btn">Submit</button>
         </div>
     </form> 

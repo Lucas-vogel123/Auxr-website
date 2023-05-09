@@ -39,10 +39,17 @@
     <div class="mb-3">
         <form method = "POST">
             <label for="email" class="form-label">Email</label>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for msg in messages %}
+                        <p class = "text-danger">{{msg}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
             <input type="text" class="form-control" id = "email" name="email">
+            <button class="submit-btn spacing">Submit</button>
         </form>
     </div>
-    <button class="submit-btn spacing">Submit</button>
 </div>
 
 <footer class="footer">
