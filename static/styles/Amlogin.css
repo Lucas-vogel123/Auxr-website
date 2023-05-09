@@ -1,11 +1,25 @@
-body {
-    font-family: Arial, sans-serif;
+@font-face{
+    font-family: Alfa;
+    src: url("../fonts/Alfa.ttf");
+  }
+  @font-face{
+    font-family: SF;
+    src: url("../fonts/SF.ttf");
+  }
+  
+  @font-face{
+    font-family: SFbold;
+    src: url("../fonts/SFbold.otf");
+  }
+  body {
+    font-family: SF;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     background-color: white;
     margin: 0;
     padding: 0;
+    justify-content: space-between;
 }
 .navbar {
     background-color: #A59ECB;
@@ -34,10 +48,11 @@ body {
     font-size: x-large;
   }
 .page-title {
-    font-size: 36px;
+    font-size: 60px;
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    font-family: SFbold;
 }
 .login-form {
     max-width: 400px;
@@ -60,6 +75,7 @@ body {
 .footer {
     background-color: #A59ECB;
     padding: 20px;
+    color: white;
     text-align: center;
 }
 .footer-links {
