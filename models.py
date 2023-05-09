@@ -7,13 +7,14 @@ class Ambassador(Base):
 
     id = Column("id", INTEGER, primary_key = True)
     email = Column("email", TEXT, nullable = False)
+    first_name = Column("fname", TEXT, nullable = False)
+    last_name = Column("lname", TEXT, nullable = False)
     password = Column("password", TEXT, nullable = False)
     application = relationship("Application", back_populates="ambassadors")
 
-    def __init__(self, email, password, school_id):
+    def __init__(self, email, password):
         self.email = email
         self.password = password
-        self.school_id = school_id
         
 class Application(Base):
     __tablename__ = "applications"
@@ -28,10 +29,11 @@ class Application(Base):
     SA_1 = Column("SA_1", TEXT, nullable = False)
     SA_2 = Column("SA_2", TEXT, nullable = False)
     SA_3 = Column("SA_3", TEXT, nullable = False)
+    password = Column("password", TEXT, nullable = False)
     ambassador_id = Column("ambassador_id", INTEGER, ForeignKey(Ambassador.id))
     ambassadors = relationship("Ambassador", back_populates = "application")
     
-    def __init__(self, fname, lname, gender, email, school, programs, SA1, SA2, SA3):
+    def __init__(self, fname, lname, gender, email, school, programs, SA1, SA2, SA3, password):
         self.first_name = fname
         self.last_name = lname
         self.gender = gender
@@ -41,6 +43,7 @@ class Application(Base):
         self.SA_1 = SA1
         self.SA_2 = SA2
         self.SA_3 = SA3
+        self.password = password
 
 class School(Base):
     __tablename__ = "schools"

@@ -4,6 +4,8 @@ from database import init_db, db_session
 from datetime import datetime
 
 app = Flask(__name__)
+app.secret_key = 'Bingo1598'
+
 
 @app.route("/")
 @app.route("/home")
@@ -25,7 +27,8 @@ def ambassador_login():
         password = request.form["password"]
         ambassador = db_session().query(Ambassador).where(Ambassador.email == email and Ambassador.password == password)
         if(ambassador == None):
-            flash("ambassador does not exist")
+            print("ambassador does not exist")
+            #handle error here
         else:
             print("Ambassador logged in")  
             return render_template("home.html")
@@ -51,14 +54,30 @@ def ambassador_apply():
         sa3 = request.form["SA3"]
         password = request.form["password"]
         confirm_password = request.form["confirmPassword"]
+        # verify_password = db_session().query(Ambassador).where(Ambassador.password == password)
         if(password == confirm_password):
             verify = True
             print("password is good")
+        # elif(verify_password != None):
+        #     #handle error
+        #     print("Password is taken")
+        #     pass
         else:
             verify = False
             print("wrong password")
         if(verify):
-            new_application = Application(fname, lname, gender, email, school, programs, sa1, sa2, sa3)
+            new_application = Application(fname, lname, gender, email, school, programs, sa1, sa2, sa3, password)
+            #algorithm that sorts ambassador application into ambassadors
+            is_ambassador = db_session().query(Ambassador).where(Ambassador.first_name == fname and Ambassador.last_name == lname and Ambassador.email == email and Ambassador.school == school)
+            #if(is_ambassador == None):
+            new_ambassador = Ambassador(email, password)
+            Ambassador.application.append(new_application)
+            Application.ambassadors.append(new_ambassador)
+            db_session.add(new_ambassador)
+            print("ambassador made")
+            #else:
+                #handle error
+                #print("Ambassador already exists")
             db_session.add(new_application)
             db_session.commit()
             print("application made")
