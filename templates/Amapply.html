@@ -11,7 +11,7 @@
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="home.html">Auxr</a>
+            <a class="navbar-brand" href="home.info">Auxr</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -22,11 +22,11 @@
                             Pages
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="team.html">About the Team</a></li>
-                            <li><a class="dropdown-item" href="Amlogin.html">Auxr Ambassador Login</a></li>
-                            <li><a class="dropdown-item" href="NewsletterSignUp.html">Sign up for the Newsletter</a></li>
-                            <li><a class="dropdown-item" href="Amapply.html">Apply to become an Auxr ambassador</a></li>
-                            <li><a class="dropdown-item" href="Aminfo.html">About Auxr Ambassadors</a></li>
+                            <li><a class="dropdown-item" href="/about/the/team">About the Team</a></li>
+                            <li><a class="dropdown-item" href="/ambassador/login">Auxr Ambassador Login</a></li>
+                            <li><a class="dropdown-item" href="/newsletter/signup">Sign up for the Newsletter</a></li>
+                            <li><a class="dropdown-item" href="/apply">Apply to become an Auxr ambassador</a></li>
+                            <li><a class="dropdown-item" href="/ambassador/info">About Auxr Ambassadors</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -34,75 +34,64 @@
         </div>
     </nav>
     <h1 class="header">Auxr Ambassador Program Application</h1>
-
-    <div class="container">
-        <form>
-            <div class="row">
-                <div class="col-md-6 form-group">
-                    <form>
-                        <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" id="firstName">
-                    </form>
-                </div>
-                <div class="col-md-6 form-group">
-                    <form>
-                        <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" id="lastName">
-                    </form>
-                </div>
-            </div>
-            <div class="form-group">
-                <form>
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email">
-                </form>
-            </div>
-            <div class="form-group">
-                <form>
-                    <label for="gender">Gender</label>
-                    <input type="text" class
-                    ="form-control" id="gender">
-                </form>
-            </div>
-            <div class="form-group">
-                <form>
-                    <label for="college">College/Highschool</label>
-                    <input type="text" class="form-control" id="college">
-                </form>
-            </div>
-            <div class="form-group">
-                <form>
-                    <label for="socialPrograms">Social Programs (Fraternities, Sororities, etc)</label>
-                    <input type="text" class="form-control" id="socialPrograms">
-                </form>
-            </div>
-        </form>
-    </div>
-
-    <div class="black-background">
-        <h2>Short Answer Responses</h2>
-        <h4>Why do you want to be an ambassador?</h4>
-        <textarea class="answer centered-box" placeholder="Answer here..."></textarea>
-
-        <h4>How do you see yourself contributing as an Auxr ambassador?</h4>
-        <textarea class="answer  centered-box" placeholder="Answer here..."></textarea>
-
-        <h4>What marketing or promoting experience do you have?</h4>
-        <textarea class="answer centered-box" placeholder="Answer here..."></textarea>
-
+    <form method = "POST">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id = "firstName" name="firstName">
                 </div>
                 <div class="col-md-6 form-group">
-                    <label for="confirmPassword">Confirm Password</label>
-                    <input type="password" class="form-control" id="confirmPassword">
+                    <label for="lastName">Last Name</label>
+                     <input type="text" class="form-control" id ="lastName" name="lastName">
+                </div>
+            </div>
+            <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id = "email" name="email">
+            </div>
+            <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <input type="text" class = "form-control" id = "gender" name="gender">
+            </div>
+            <div class="form-group">
+                    <label for="school">College/Highschool</label>
+                    <input type="text" class="form-control" id = "school" name="school">
+            </div>
+            <div class="form-group">
+                    <label for="socialPrograms">Social Programs (Fraternities, Sororities, etc)</label>
+                    <input type="text" class="form-control" id = "socialPrograms" name="socialPrograms">
+            </div>
+        </div>
+
+        <div class="black-background">
+            <h2>Short Answer Responses</h2>
+            <h4>Why do you want to be an ambassador?</h4>
+            <label for = "SA1" class="answer centered-box" placeholder="Answer here..."></label>
+            <input type="text" class="form-control" id = "SA1" name="SA1">
+    
+            <h4>How do you see yourself contributing as an Auxr ambassador?</h4>
+                <label for = "SA2" class="answer centered-box" placeholder="Answer here..."></label>
+                <input type="text" class="form-control" id = "SA2" name="SA2">
+
+            <h4>What marketing or promoting experience do you have?</h4>
+                <label for = "SA3" class="answer centered-box" placeholder="Answer here..."></label>
+                <input type="text" class="form-control" id = "SA3" name="SA3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id = "password" name="password">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" class="form-control" id = "confirmPassword" name="confirmPassword">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <button class="submit-btn">Submit</button>
+    </form> 
 
     <footer class="footer">
         <div class="footer-links">
