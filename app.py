@@ -17,7 +17,7 @@ def ambassador_info():
     return render_template("Aminfo.html")
 
 @app.route("/privacy/policy")
-def ambassador_info():
+def privacy_policy():
     return render_template("privacyPolicy.html")
 
 @app.route("/ambassador/login", methods = ["GET", "POST"])
