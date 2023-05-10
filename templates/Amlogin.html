@@ -9,6 +9,13 @@
 {% block content %}
     <h1 class="page-title">Auxr Ambassador Login</h1>
 
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p class = "text-danger">{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     <form method = "POST">
         <div class="login-form">
             <div class="mb-3">
