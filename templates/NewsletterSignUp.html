@@ -11,10 +11,19 @@
     <div class="newsletter-form">
         <div class="mb-3">
             <form method = "POST">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for msg in messages %}
+                            <p class = "text-danger">{{msg}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
                 <label for="email" class="form-label">Email</label>
                 <input type="text" class="form-control" id = "email" name="email">
+                <div class = "spacing">
+                    <button class="submit-btn spacing">Submit</button>
+                </div>
             </form>
         </div>
-        <button class="submit-btn spacing">Submit</button>
     </div>
 {% endblock %}

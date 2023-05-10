@@ -67,7 +67,7 @@ def ambassador_apply():
         if(verify):
             new_application = Application(fname, lname, gender, email, school, programs, sa1, sa2, sa3, password)
             #algorithm that sorts ambassador application into ambassadors
-            is_ambassador = db_session().query(Ambassador).where((Ambassador.first_name == fname) & (Ambassador.last_name == lname) & (Ambassador.email == email))
+            is_ambassador = db_session().query(Ambassador).where((Ambassador.first_name == fname) & (Ambassador.last_name == lname) & (Ambassador.email == email)).first()
             if(is_ambassador == None):
                 db_session.add(new_application)
                 db_session.commit()
@@ -90,7 +90,7 @@ def ambassador_apply():
 def newsletter_signup():
     if request.method == "POST":
         email = request.form["email"]
-        already_registered = db_session().query(Newsletter).where(email == Newsletter.email).all()
+        already_registered = db_session().query(Newsletter).where(email == Newsletter.email).first()
         if(already_registered == None):
             new_newsletter = Newsletter(email)
             db_session.add(new_newsletter)
