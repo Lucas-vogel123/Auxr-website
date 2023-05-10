@@ -6,27 +6,33 @@ from datetime import datetime
 app = Flask(__name__)
 app.secret_key = 'Bingo1598'
 
-
+#takes you to our home page
 @app.route("/")
 @app.route("/home")
 def home():
     return render_template("home.html")
 
+#takes you too ambassador info page
 @app.route("/ambassador/info")
 def ambassador_info():
     return render_template("Aminfo.html")
 
+#privacy policy linked through footer
 @app.route("/privacy/policy")
 def privacy_policy():
     return render_template("privacyPolicy.html")
 
+#ambassador login page
 @app.route("/ambassador/login", methods = ["GET", "POST"])
 def ambassador_login():
+    #if you get a post request
     if request.method == "POST":
         email = request.form["email"]
         password = request.form["password"]
         ambassador = db_session().query(Ambassador).where((Ambassador.email == email) & (Ambassador.password == password)).first()
+        #checks if the person logging in is an ambassador
         if(ambassador == None):
+            #show an error message if they arent
             flash("ambassador does not exist")
             return redirect(url_for("ambassador_login"))
         else:
@@ -42,6 +48,7 @@ def ambassador_loggedin():
 @app.route("/apply", methods = ["GET", "POST"])
 def ambassador_apply():
     if request.method == "POST":
+        #gathers all the information in the application
         verify = False
         fname = request.form["firstName"]
         lname = request.form["lastName"]
@@ -55,18 +62,19 @@ def ambassador_apply():
         password = request.form["password"]
         confirm_password = request.form["confirmPassword"]
         verify_password = db_session().query(Ambassador).where(Ambassador.email == email)
+        #checks if passwords are matching
         if(password == confirm_password):
             verify = True
             print("email is good")
         elif(verify_password != None):
-            #handle error
+            #handles error
             flash("email is already registered")
         else:
             verify = False
             print("wrong password")
         if(verify):
             new_application = Application(fname, lname, gender, email, school, programs, sa1, sa2, sa3, password)
-            #algorithm that sorts ambassador application into ambassadors
+            #checks if they are already an ambassador
             is_ambassador = db_session().query(Ambassador).where((Ambassador.first_name == fname) & (Ambassador.last_name == lname) & (Ambassador.email == email)).first()
             if(is_ambassador == None):
                 db_session.add(new_application)
@@ -76,7 +84,7 @@ def ambassador_apply():
                 db_session.add(new_ambassador)
                 print("ambassador made")
             else:
-                #handle error
+                #handles error if they are an ambasssador
                 flash("Ambassador already exists")
                 return redirect(url_for("ambassador_apply"))
             db_session.commit()
@@ -89,6 +97,7 @@ def ambassador_apply():
 @app.route("/newsletter/signup", methods = ["GET", "POST"])
 def newsletter_signup():
     if request.method == "POST":
+        #takes in an email and signs it up for newsletter
         email = request.form["email"]
         already_registered = db_session().query(Newsletter).where(email == Newsletter.email).first()
         if(already_registered == None):
@@ -102,9 +111,6 @@ def newsletter_signup():
         return redirect(url_for("home"))
     else:
         return render_template("newsletterSignUp.html")
-    
-    
-    
 
 @app.route("/about/the/team")
 def team():
