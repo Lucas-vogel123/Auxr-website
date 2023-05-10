@@ -1,0 +1,111 @@
+@font-face{
+    font-family: Alfa;
+    src: url("../fonts/Alfa.ttf");
+  }
+  @font-face{
+    font-family: SF;
+    src: url("../fonts/SF.ttf");
+  }
+  
+  @font-face{
+    font-family: SFbold;
+    src: url("../fonts/SFbold.otf");
+  }
+  body {
+    font-family: SF;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+.page-title {
+    font-size: 60px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-family: SFbold;
+    margin-top: 30px;
+}
+.navbar {
+    background-color: #A59ECB;
+
+}
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: white;
+}
+.navbar-nav {
+    position: relative;
+    right: 100px;
+}
+.dropdown-menu {
+    background-color: #A59ECB;
+    
+}
+.dropdown-item {
+    color: white;
+}
+.sticky-top {
+    top: 0;
+    z-index: 1020;
+}
+
+.home-title {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.home-description {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.home-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.home-btn {
+    background-color: #A59ECB;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+}
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0;
+  }
+  
+  .card-wrapper {
+    display: flex;
+    flex-basis: calc(50% - 20px);
+    margin: 10px;
+  }
+.spacing {
+    margin-bottom: 50px;
+}  
+
+.join-btn:hover,
+.newsletter-btn:hover {
+    background-color: #8d7cb9;
+}
+
+.footer {
+    background-color: #A59ECB;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}

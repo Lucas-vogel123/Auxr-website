@@ -8,14 +8,18 @@ app.secret_key = 'Bingo1598'
 
 #takes you to our home page
 @app.route("/")
-@app.route("/home")
-def home():
-    return render_template("home.html")
+@app.route("/homepage")
+def homepage():
+    return render_template("homepage.html")
 
 #takes you too ambassador info page
 @app.route("/ambassador/info")
 def ambassador_info():
     return render_template("Aminfo.html")
+
+@app.route("/home")
+def home():
+    return render_template("home.html")
 
 #privacy policy linked through footer
 @app.route("/privacy/policy")

@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}Auxr - Home{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/homepage.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="home-content">
+        <h1 class="page-title">Welcome to Auxr</h1>
+        <p class="home-description">Discover and share your love for music with Auxr, the ultimate platform for music lovers and creators.</p>
+            <div class="cards-container">
+                <div class="card-wrapper">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                          <div class="col-md-4">
+                            <img src="/static/images/homeApp.PNG" class="card-img">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Create or Join Playlists</h5>
+                              <p class="card-text">Queue up music with your friends for parties, pregames, roadtrips and more. Hosts can create and share playlists to queue songs with multiple listeners. Playlists are shared with a unique passcode. Audio is played from the host phone or connected sound device.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="card-wrapper">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                          <div class="col-md-4">
+                            <img src="/static/images/share.PNG" class="card-img">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Share the Music Experience</h5>
+                              <p class="card-text">Infinite listeners: Anyone can join. No account creation is needed. Text the code to your friends.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="card-wrapper">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                          <div class="col-md-4">
+                            <img src="/static/images/playlistviewdarkmodehost.PNG" class="card-img">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Discover New Music</h5>
+                              <p class="card-text">Explore new and upcoming artists, playlists, and more with Auxr's powerful music discovery tools.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div> 
+                </div>
+                <div class="card-wrapper">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                          <div class="col-md-4">
+                            <img src="/static/images/playlistviewlightmode.PNG" class="card-img">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Upvote Your Favorite Songs</h5>
+                              <p class="card-text">Vote on any song with a single vote and you and all your friends can all vote. C </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div> 
+                </div>
+            </div>
+            <div class="home-buttons spacing">
+                <a href="/apply" class="home-btn join-btn">Join Auxr Ambassador Program</a>
+                <a href="/newsletter/signup" class="home-btn newsletter-btn">Subscribe to our Newsletter</a>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+       
