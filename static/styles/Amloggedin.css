@@ -71,7 +71,11 @@
 .track-progress h2 {
     font-size: 36px;
     text-align: center;
-    margin-bottom: 10px;
+}
+.styled-header {
+    font-family: SFbold;
+    margin-bottom: 50px;
+    margin-top: 30px;
 }
 .progress {
     background-color: white;
@@ -83,6 +87,7 @@
 .progress .progress-bar {
     background-color: #A59ECB;
     height: 100%;
+    width: 400px;
     border-radius: 10px;
 }
 .percentage {
@@ -102,6 +107,7 @@
 }
 .next-reward h3 {
     font-size: 24px;
+    font-family: SFbold;
     margin-bottom: 0;
 }
 .footer {
