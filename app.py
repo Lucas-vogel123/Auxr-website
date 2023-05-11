@@ -6,20 +6,17 @@ from datetime import datetime
 app = Flask(__name__)
 app.secret_key = 'Bingo1598'
 
-#takes you to our home page
-@app.route("/")
-@app.route("/homepage")
-def homepage():
-    return render_template("homepage.html")
-
-#takes you too ambassador info page
+#takes you to ambassador info page
 @app.route("/ambassador/info")
 def ambassador_info():
     return render_template("Aminfo.html")
 
-@app.route("/home")
-def home():
-    return render_template("home.html")
+
+#takes you to our homepage
+@app.route("/")
+@app.route("/homepage")
+def homepage():
+    return render_template("homepage.html")
 
 #privacy policy linked through footer
 @app.route("/privacy/policy")
@@ -41,7 +38,7 @@ def ambassador_login():
             return redirect(url_for("ambassador_login"))
         else:
             print("Ambassador logged in")  
-            return redirect(url_for("home"))
+            return redirect(url_for("homepage"))
     else:
         return render_template("Amlogin.html")
 
@@ -93,7 +90,7 @@ def ambassador_apply():
                 return redirect(url_for("ambassador_apply"))
             db_session.commit()
             print("application made")
-        return redirect(url_for("home"))
+        return redirect(url_for("homepage"))
     
     else:
         return render_template("Amapply.html")
@@ -112,7 +109,7 @@ def newsletter_signup():
         else:
             flash("email is already regsitered")
             return redirect(url_for("newsletter_signup"))
-        return redirect(url_for("home"))
+        return redirect(url_for("homepage"))
     else:
         return render_template("newsletterSignUp.html")
 
